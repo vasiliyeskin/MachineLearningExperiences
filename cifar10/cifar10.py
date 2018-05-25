@@ -78,3 +78,15 @@ model.fit(X_train, Y_train,
 # Оцениваем качество обучения модели на тестовых данных
 scores = model.evaluate(X_test, Y_test, verbose=0)
 print("Точность работы на тестовых данных: %.2f%%" % (scores[1]*100))
+
+print("Сохраняем сеть")
+# Сохраняем сеть для последующего использования
+# Генерируем описание модели в формате json
+model_json = model.to_json()
+json_file = open("cifar10_model.json", "w")
+# Записываем архитектуру сети в файл
+json_file.write(model_json)
+json_file.close()
+# Записываем данные о весах в файл
+model.save_weights("cifar10_model.h5")
+print("Сохранение сети завершено")
