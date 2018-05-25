@@ -10,7 +10,11 @@ model = VGG16(weights='imagenet')
 
 # Загружаем изображение для распознавания, преобразовываем его в массив
 # numpy и выполняем предварительную обработку
+# img_path = 'cat.jpg'
+# img_path = 'ship.jpg'
 img_path = 'plane.jpg'
+# img_path = 'alien.jpg'
+# img_path = 'stranger.jpg'
 img = image.load_img(img_path, target_size=(224, 224))
 plt.imshow(img, cmap='gray')
 plt.show()
