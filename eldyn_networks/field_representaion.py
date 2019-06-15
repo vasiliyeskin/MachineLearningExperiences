@@ -1,4 +1,5 @@
-from PIL import Image
+from PIL import Image, ImageDraw
+import numpy as np
 
 resize_width = 300
 infile = "ship.jpg"
@@ -26,17 +27,47 @@ hsize = int((float(img.size[1])*float(wpercent)))
 img = img.resize((resize_width,hsize), Image.ANTIALIAS)
 img.save(outfile)
 img.save("test.png")
+
+draw = ImageDraw.Draw(img)
 greyscale_image = img.convert('L')
 imgCopy = img.copy()
 imgCopy.show()
 
-obj = greyscale_image.load()
-obj[25,25] = 0
-obj[25,26] = 0
-obj[25,27] = 0
-obj[25,28] = 0
-obj[25,29] = 0
-obj[25,30] = 0
+width = img.size[0]
+height = img.size[1]
+
+obj = img.load()
+obj = img.load()
+
+obj2 = np.ones((width, height), dtype=int)
+# obj[:, :][0] = obj[:, :][0] + obj2[:, :]
+
 
 greyscale_image.save('greyscale_image.jpg')
-greyscale_image.show()
+# greyscale_image.show()
+
+increas = -50
+for i in range(width):
+    for j in range(height):
+        a = obj[i, j][0] + increas * obj2[i, j]
+        b = obj[i, j][1] + increas * obj2[i, j]
+        c = obj[i, j][2] + increas * obj2[i, j]
+        draw.point((i, j), (a, b, c))
+
+img.show()
+
+obj3 = obj2 + obj2
+obj2 = obj3 * obj3
+obj4 = 6 * np.ones((width, height), dtype=int)
+obj5 = obj2 * obj4
+print(obj5)
+print(obj5[:, 0].size)
+print(obj5[0, :].size)
+
+
+
+
+
+
+
+
