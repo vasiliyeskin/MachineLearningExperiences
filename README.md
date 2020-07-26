@@ -6,3 +6,4 @@
 # Usefull links
 1. Machine Learning Roadmap https://www.youtube.com/watch?v=pHiMN_gy9mk&feature=youtu.be
 2. Introduction to Convolutional Neural Networks (CNN) https://m.habr.com/ru/post/510816/
+3. Recognition of the formulas to latex http://lstm.seas.harvard.edu/latex/, https://github.com/harvardnlp/im2markup
