@@ -15,4 +15,5 @@ https://towardsdatascience.com/detecting-face-features-with-python-30385aee4a8e
 6. 5 Beginner Friendly Steps to Learn Machine Learning and Data Science with Python
 https://www.mrdbourke.com/5-beginner-friendly-steps-to-learn-machine-learning/
 
-https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2.md
+7. https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2.md
+8. Machine Learning Notebooks: Hands-on Machine Learning with Scikit-Learn, Keras and TensorFlow: https://github.com/ageron/handson-ml2
