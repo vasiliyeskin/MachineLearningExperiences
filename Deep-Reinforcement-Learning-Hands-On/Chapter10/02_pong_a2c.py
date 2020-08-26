@@ -14,9 +14,9 @@ import torch.optim as optim
 from lib import common
 
 GAMMA = 0.99
-LEARNING_RATE = 0.003
-ENTROPY_BETA = 0.02
-BATCH_SIZE = 32
+LEARNING_RATE = 0.001
+ENTROPY_BETA = 0.01
+BATCH_SIZE = 128
 NUM_ENVS = 50
 
 REWARD_STEPS = 4
