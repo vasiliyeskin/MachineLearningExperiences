@@ -5,6 +5,7 @@ https://www.asozykin.ru/courses/nnpython
 
 
 # Usefull links
+0. http://neuralnetworksanddeeplearning.com/
 1. Machine Learning Roadmap https://www.youtube.com/watch?v=pHiMN_gy9mk&feature=youtu.be
 2. Introduction to Convolutional Neural Networks (CNN) https://m.habr.com/ru/post/510816/
 https://m.habr.com/ru/post/510560/
