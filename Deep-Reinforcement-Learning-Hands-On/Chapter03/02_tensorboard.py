@@ -1,7 +1,8 @@
 import math
 from tensorboardX import SummaryWriter
 
-
+# install tensorboard::   pip3 install tensorboard
+# run as::                python3 -m tensorboard.main --logdir=runs
 if __name__ == "__main__":
     writer = SummaryWriter()
 
