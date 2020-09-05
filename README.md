@@ -18,3 +18,5 @@ https://www.mrdbourke.com/5-beginner-friendly-steps-to-learn-machine-learning/
 
 7. https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2.md
 8. Machine Learning Notebooks: Hands-on Machine Learning with Scikit-Learn, Keras and TensorFlow: https://github.com/ageron/handson-ml2
+
+9. Install Gym on Windows under Anaconda https://towardsdatascience.com/how-to-install-openai-gym-in-a-windows-environment-338969e24d30
