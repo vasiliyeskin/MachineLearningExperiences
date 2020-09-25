@@ -21,3 +21,5 @@ https://www.mrdbourke.com/5-beginner-friendly-steps-to-learn-machine-learning/
 
 9. Install Gym on Windows under Anaconda https://towardsdatascience.com/how-to-install-openai-gym-in-a-windows-environment-338969e24d30
 после установки gym для запуска из терминала или Pycharm в терминале нужно ввести команду activate gym. После чего можно запускать код (через строку).
+
+10. seq2seq: https://m.habr.com/ru/post/486158/    https://m.habr.com/ru/company/otus/blog/430780/     https://m.habr.com/ru/post/440472/     https://towardsdatascience.com/attention-seq2seq-with-pytorch-learning-to-invert-a-sequence-34faf4133e53
