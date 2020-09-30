@@ -8,12 +8,16 @@ import torch.nn as nn
 import torch.optim as optim
 from tensorboardX import SummaryWriter
 
+import tensorboardX.utils as xutils
+import tensorboardX.x2num as x2num
 import torchvision.utils as vutils
 
 import gym
 import gym.spaces
 
 import numpy as np
+import torchvision
+import matplotlib.pyplot as plt
 
 log = gym.logger
 log.set_level(gym.logger.INFO)
@@ -159,6 +163,12 @@ if __name__ == "__main__":
         gen_input_v = torch.FloatTensor(BATCH_SIZE, LATENT_VECTOR_SIZE, 1, 1).normal_(0, 1).to(device)
         batch_v = batch_v.to(device)
         gen_output_v = net_gener(gen_input_v)
+
+        # # show the training data
+        # tensor = x2num.make_np(vutils.make_grid(batch_v.data[:64], normalize=True))
+        # xtensors = xutils.convert_to_HWC(tensor, 'CHW')
+        # plt.imshow(xtensors)
+        # plt.show()
 
         # train discriminator
         dis_optimizer.zero_grad()
