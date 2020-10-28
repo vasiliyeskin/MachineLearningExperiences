@@ -25,3 +25,5 @@ https://www.mrdbourke.com/5-beginner-friendly-steps-to-learn-machine-learning/
 10. seq2seq: https://m.habr.com/ru/post/486158/    https://m.habr.com/ru/company/otus/blog/430780/     https://m.habr.com/ru/post/440472/     https://towardsdatascience.com/attention-seq2seq-with-pytorch-learning-to-invert-a-sequence-34faf4133e53
 
 11. https://alexanderkurakin.blogspot.com/2019/01/pytorch-data-loading-preprocessing.html
+
+12. https://proglib.io/p/deep-learning-books/
