@@ -1,0 +1,1 @@
+### some code and funny ML project from OpenCV in 3 hours https://www.youtube.com/watch?v=WQeoO7MI0Bs&t=10617s
