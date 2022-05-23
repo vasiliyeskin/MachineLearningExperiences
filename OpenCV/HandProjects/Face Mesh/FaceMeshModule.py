@@ -12,8 +12,7 @@ class FaceMeshDetector():
 
         self.mpDraw = mp.solutions.drawing_utils
         self.mpFaceMesh = mp.solutions.face_mesh
-        self.faceMesh = self.mpFaceMesh.FaceMesh(self.staticMode, self.maxFaces,
-        self.minDetectionCon, self.minTrackCon)
+        self.faceMesh = self.mpFaceMesh.FaceMesh(self.staticMode, self.maxFaces, False, self.minDetectionCon, self.minTrackCon)
         self.drawSpec = self.mpDraw.DrawingSpec(thickness=1, circle_radius=2)
 
     def findFaceMesh(self, img, draw=True):
