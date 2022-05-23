@@ -4,6 +4,8 @@ import sys
 import math
 from enum import Enum
 import neat
+from glob import glob
+from datetime import datetime
 
 width = 1280
 height = 720
@@ -306,5 +308,25 @@ if __name__ == "__main__":
     # init NEAT
     p = neat.Population(config)
 
+    # Add a stdout reporter to show progress in the terminal.
+    p.add_reporter(neat.StdOutReporter(True))
+    stats = neat.StatisticsReporter()
+    p.add_reporter(stats)
+
+    paths_to_last_saved = sorted(glob(f'./saved_instances/neat-checkpoint-*'))
+    if len(paths_to_last_saved) == 0:
+        print('Warning! Model not found')
+        p.add_reporter(neat.Checkpointer(generation_interval=2, time_interval_seconds=30, filename_prefix=f'./saved_instances/neat-checkpoint-{round(datetime.utcnow().timestamp())}'))
+    else:
+        p = neat.Checkpointer.restore_checkpoint(paths_to_last_saved[-1])
+
     # run NEAT
-    p.run(run_game, 1000)
+    winner = p.run(run_game, 4)
+
+
+    # Display the winning genome.
+    print('\nBest genome:\n{!s}'.format(winner))
+
+    paths_to_last_saved = sorted(glob(f'./saved_instances/neat-checkpoint-*'))
+    p = neat.Checkpointer.restore_checkpoint(paths_to_last_saved[-1])
+    p.run(run_game, 2)
