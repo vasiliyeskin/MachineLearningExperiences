@@ -321,7 +321,7 @@ if __name__ == "__main__":
         p = neat.Checkpointer.restore_checkpoint(paths_to_last_saved[-1])
 
     # run NEAT
-    winner = p.run(run_game, 4)
+    winner = p.run(run_game, 30)
 
 
     # Display the winning genome.
