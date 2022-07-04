@@ -10,6 +10,8 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 
+import datetime
+
 from lib import common, i2a
 
 
@@ -74,9 +76,10 @@ def iterate_batches(envs, net, device="cpu"):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--cuda", default=False, action="store_true", help="Enable cuda")
-    parser.add_argument("-n", "--name", required=True, help="Name of the run")
-    parser.add_argument("-m", "--model", required=True, help="File with model to load")
+    currentDate = datetime.date.today().strftime('%d%m%Y')
+    parser.add_argument("--cuda", default=True, action="store_true", help="Enable cuda")
+    parser.add_argument("-n", "--name", required=False, default=currentDate, help="Name of the run")
+    parser.add_argument("-m", "--model", required=False, default='./saves/01_a2c_04072022/best_0022.333_37000.dat', help="File with model to load")
     args = parser.parse_args()
     device = torch.device("cuda" if args.cuda else "cpu")
 
