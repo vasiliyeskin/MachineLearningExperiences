@@ -25,6 +25,7 @@ if __name__ == "__main__":
     parser.add_argument("-n", "--name", required=False, default=currentDate, help="Name of the run")
     parser.add_argument("--seed", type=int, default=common.DEFAULT_SEED, help="Random seed to use, default=%d" % common.DEFAULT_SEED)
     parser.add_argument("--steps", type=int, default=None, help="Limit of training steps, default=disabled")
+    parser.add_argument("-m", "--model", required=False, default='./saves/01_a2c_04072022/best_0022.333_37000.dat', help="File with model to load")
     args = parser.parse_args()
     device = torch.device("cuda" if args.cuda else "cpu")
 
@@ -42,8 +43,14 @@ if __name__ == "__main__":
     writer = SummaryWriter(comment="-01_a2c_" + args.name + suffix)
 
     net = common.AtariA2C(envs[0].observation_space.shape, envs[0].action_space.n).to(device)
+
+    if args.model is not None:
+        net.load_state_dict(torch.load(args.model, map_location=lambda storage, loc: storage))
+        net = net.to(device)
+
     print(net)
     optimizer = optim.RMSprop(net.parameters(), lr=LEARNING_RATE, eps=1e-5)
+
 
     step_idx = 0
     total_steps = 0
