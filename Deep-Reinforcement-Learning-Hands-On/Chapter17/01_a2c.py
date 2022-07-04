@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 import os
 import ptan
+
+
 import time
+import datetime
 import argparse
 from tensorboardX import SummaryWriter
 
@@ -17,8 +20,9 @@ TEST_EVERY_BATCH = 1000
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--cuda", default=False, action="store_true", help="Enable cuda")
-    parser.add_argument("-n", "--name", required=True, help="Name of the run")
+    currentDate = datetime.date.today().strftime('%d%m%Y')
+    parser.add_argument("--cuda", default=True, action="store_true", help="Enable cuda")
+    parser.add_argument("-n", "--name", required=False, default=currentDate, help="Name of the run")
     parser.add_argument("--seed", type=int, default=common.DEFAULT_SEED, help="Random seed to use, default=%d" % common.DEFAULT_SEED)
     parser.add_argument("--steps", type=int, default=None, help="Limit of training steps, default=disabled")
     args = parser.parse_args()
