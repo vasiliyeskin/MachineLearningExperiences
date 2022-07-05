@@ -79,7 +79,8 @@ if __name__ == "__main__":
     currentDate = datetime.date.today().strftime('%d%m%Y')
     parser.add_argument("--cuda", default=True, action="store_true", help="Enable cuda")
     parser.add_argument("-n", "--name", required=False, default=currentDate, help="Name of the run")
-    parser.add_argument("-m", "--model", required=False, default='./saves/01_a2c_04072022/best_0022.333_37000.dat', help="File with model to load")
+    # parser.add_argument("-m", "--model", required=False, default='./saves/01_a2c_04072022/best_0022.333_37000.dat', help="File with model to load")
+    parser.add_argument("-m", "--model", required=False, default='./saves/01_a2c_04072022/best_0854.667_832000.dat', help="File with model to load")
     args = parser.parse_args()
     device = torch.device("cuda" if args.cuda else "cpu")
 

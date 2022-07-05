@@ -57,12 +57,14 @@ class EnvironmentModel(nn.Module):
 
     def forward(self, imgs, actions):
         batch_size = actions.size()[0]
-        act_planes_v = torch.FloatTensor(batch_size, self.n_actions, *self.input_shape[1:]).zero_().to(actions.device)
+        act_planes_v = torch.FloatTensor(batch_size, self.n_actions, *self.input_shape[1:])
+        act_planes_v.zero_()
+        act_planes_v = act_planes_v.to(actions.device)
         act_planes_v[range(batch_size), actions] = 1.0
         comb_input_v = torch.cat((imgs, act_planes_v), dim=1)
         c1_out = self.conv1(comb_input_v)
         c2_out = self.conv2(c1_out)
-        c2_out += c1_out
+        c2_out = c2_out + c1_out
         img_out = self.deconv(c2_out)
         rew_conv = self.reward_conv(c2_out).view(batch_size, -1)
         rew_out = self.reward_fc(rew_conv)
