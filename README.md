@@ -28,4 +28,4 @@ https://www.mrdbourke.com/5-beginner-friendly-steps-to-learn-machine-learning/
 
 12. https://proglib.io/p/deep-learning-books/
 
-13. (https://vas3k.ru/blog/machine_learning/)[Машинное обучение для людей]
+13. [Машинное обучение для людей][https://vas3k.ru/blog/machine_learning/]
