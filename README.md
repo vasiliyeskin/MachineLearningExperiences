@@ -27,3 +27,5 @@ https://www.mrdbourke.com/5-beginner-friendly-steps-to-learn-machine-learning/
 11. https://alexanderkurakin.blogspot.com/2019/01/pytorch-data-loading-preprocessing.html
 
 12. https://proglib.io/p/deep-learning-books/
+
+13. (Машинное обучение для людей)[https://vas3k.ru/blog/machine_learning/]
