@@ -1,0 +1,1 @@
+link to the colab for the [stable_diffusion_21082022.ipynb](https://colab.research.google.com/github/vasiliyeskin/MachineLearningExperiences/blob/master/SOTA/diffusers/stable_diffusion_21082022.ipynb)
